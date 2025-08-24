@@ -21,10 +21,10 @@ executarVoidHub()
 
 -- Preparar para executar após teleporte
 if syn and syn.queue_on_teleport then
-    syn.queue_on_teleport('loadstring(game:HttpGet("'https://raw.githubusercontent.com/B8KLOCAL/Apenas/refs/heads/main/TEST2.lua?token=GHSAT0AAAAAADIKW3CN7TLWCBNNUUSPDHSG2FLRL6Q'", true))()')
+    syn.queue_on_teleport('loadstring(game:HttpGet("'https://raw.githubusercontent.com/B8KLOCAL/Apenas/refs/heads/main/TEST2.lua'", true))()')
     print("✅ Configurado para executar após teleporte (syn)")
 elseif queue_on_teleport then
-    queue_on_teleport('loadstring(game:HttpGet("'https://raw.githubusercontent.com/B8KLOCAL/Apenas/refs/heads/main/TEST2.lua?token=GHSAT0AAAAAADIKW3CN7TLWCBNNUUSPDHSG2FLRL6Q'", true))()')
+    queue_on_teleport('loadstring(game:HttpGet("'https://raw.githubusercontent.com/B8KLOCAL/Apenas/refs/heads/main/TEST2.lua'", true))()')
     print("✅ Configurado para executar após teleporte (queue_on_teleport)")
 else
     print("⚠️  Não foi possível configurar auto-reexecução")
@@ -32,4 +32,5 @@ else
 end
 
 print("✨ Script concluído! O VoidHub será executado automaticamente após teleportes.")
+
 
