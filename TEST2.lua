@@ -1,42 +1,33 @@
 -- EXECUTA VOIDHUB AGORA
-print("Testando VoidHub...")
 loadstring(game:HttpGet("https://raw.githubusercontent.com/abcconfirm/yuuuur/refs/heads/main/voidhub.lua"))()
-print("VoidHub executado!")
 
--- Prepara para executar O SCRIPT COMPLETO após próximo teleporte
+-- URL DO SCRIPT COMPLETO (substitua pela URL onde você salvar este código)
+local meuScript = "https://raw.githubusercontent.com/SEU_USUARIO/SEU_REPO/main/NOME_DO_ARQUIVO.lua"
+
+-- PREPARA O SCRIPT COMPLETO PARA PRÓXIMO TELEPORTE
 if syn and syn.queue_on_teleport then
-    syn.queue_on_teleport('loadstring(game:HttpGet("https://raw.githubusercontent.com/B8KLOCAL/Apenas/refs/heads/main/TEST2.lua?token=GHSAT0AAAAAADIKW3CM7SFSDCZMGGKYYDYE2FLPCDQ"))()')
-    print("✅ Script completo preparado com syn!")
+    syn.queue_on_teleport('loadstring(game:HttpGet("' .. meuScript .. '))()')
 elseif queue_on_teleport then
-    queue_on_teleport('loadstring(game:HttpGet("https://raw.githubusercontent.com/B8KLOCAL/Apenas/refs/heads/main/TEST2.lua?token=GHSAT0AAAAAADIKW3CM7SFSDCZMGGKYYDYE2FLPCDQ"))()')
-    print("✅ Script completo preparado com queue_on_teleport!")
-else
-    print("❌ Executor não suporta teleporte")
+    queue_on_teleport('loadstring(game:HttpGet("' .. meuScript .. '))()')
 end
 
-print("🔄 Sistema auto-recursivo iniciado!")
-print("📝 A cada teleporte vai executar este script completo de novo")
-
 -- ==========================================
--- EXPLICAÇÃO DO QUE MUDOU:
+-- EXEMPLO COM SUA URL DO GITHUB:
 -- ==========================================
 
 --[[
-ANTES (seu código original):
-- Executava VoidHub agora
-- Preparava apenas VoidHub para próximo teleporte
-- Resultado: Parava no 3º teleporte
+Se você salvar este código em um arquivo chamado "loop.lua", ficaria assim:
 
-AGORA (corrigido):
-- Executa VoidHub agora
-- Prepara o SCRIPT COMPLETO (ele mesmo) para próximo teleporte
-- Resultado: Loop infinito
+-- EXECUTA VOIDHUB AGORA
+loadstring(game:HttpGet("https://raw.githubusercontent.com/abcconfirm/yuuuur/refs/heads/main/voidhub.lua"))()
 
-O QUE VAI ACONTECER:
-1º teleporte: Executa script completo → VoidHub + prepara script completo
-2º teleporte: Executa script completo → VoidHub + prepara script completo  
-3º teleporte: Executa script completo → VoidHub + prepara script completo
-... INFINITAMENTE
+-- URL DO SCRIPT COMPLETO
+local meuScript = "https://raw.githubusercontent.com/B8KLOCAL/Apenas/refs/heads/main/loop.lua"
 
-SUBSTITUA o conteúdo do seu TEST2.lua por ESTE código aqui de cima!
+-- PREPARA O SCRIPT COMPLETO PARA PRÓXIMO TELEPORTE
+if syn and syn.queue_on_teleport then
+    syn.queue_on_teleport('loadstring(game:HttpGet("' .. meuScript .. '))()')
+elseif queue_on_teleport then
+    queue_on_teleport('loadstring(game:HttpGet("' .. meuScript .. '))()')
+end
 --]]
