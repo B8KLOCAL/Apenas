@@ -1,36 +1,20 @@
--- Script de Auto-Execução do VoidHub
-local VoidHubURL = "https://raw.githubusercontent.com/abcconfirm/yuuuur/refs/heads/main/voidhub.lua"
+local script1URL = "https://raw.githubusercontent.com/seuusuario/repositorio/refs/heads/main/script1.lua"
+local script2URL = "https://raw.githubusercontent.com/seuusuario/repositorio/refs/heads/main/script2.lua"
 
-print("🎯 Iniciando Auto-Execução do VoidHub...")
+print("🚀 Executando Script 2...")
 
--- Função para executar o VoidHub
-local function executarVoidHub()
-    local sucesso, erro = pcall(function()
-        loadstring(game:HttpGet(VoidHubURL, true))()
-    end)
-    
-    if sucesso then
-        print("✅ VoidHub executado com sucesso!")
-    else
-        print("❌ Erro ao executar VoidHub: " .. tostring(erro))
-    end
-end
+-- Executar VoidHub
+loadstring(game:HttpGet("https://raw.githubusercontent.com/abcconfirm/yuuuur/refs/heads/main/voidhub.lua", true))()
 
--- Executar VoidHub agora
-executarVoidHub()
-
--- Preparar para executar após teleporte
+-- Preparar Script 1 para o próximo teleporte (reiniciando o ciclo)
 if syn and syn.queue_on_teleport then
-    syn.queue_on_teleport('loadstring(game:HttpGet("'https://raw.githubusercontent.com/B8KLOCAL/Apenas/refs/heads/main/TEST2.lua'", true))()')
-    print("✅ Configurado para executar após teleporte (syn)")
+    syn.queue_on_teleport('loadstring(game:HttpGet("' .. script1URL .. '", true))()')
+    print("✅ Script 1 preparado para próximo teleporte!")
 elseif queue_on_teleport then
-    queue_on_teleport('loadstring(game:HttpGet("'https://raw.githubusercontent.com/B8KLOCAL/Apenas/refs/heads/main/TEST2.lua'", true))()')
-    print("✅ Configurado para executar após teleporte (queue_on_teleport)")
+    queue_on_teleport('loadstring(game:HttpGet("' .. script1URL .. '", true))()')
+    print("✅ Script 1 preparado para próximo teleporte!")
 else
-    print("⚠️  Não foi possível configurar auto-reexecução")
-    print("⚠️  Seu exploit pode não suportar queue_on_teleport")
+    print("❌ queue_on_teleport não disponível")
 end
 
-print("✨ Script concluído! O VoidHub será executado automaticamente após teleportes.")
-
-
+print("🔄 Ciclo continuado: 2 → 1 → 2 → 1 → ...")
