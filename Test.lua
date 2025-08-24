@@ -1,33 +1,34 @@
--- EXECUTA VOIDHUB AGORA
-loadstring(game:HttpGet("https://raw.githubusercontent.com/abcconfirm/yuuuur/refs/heads/main/voidhub.lua"))()
+-- Script de Auto-Execução do VoidHub
+local VoidHubURL = "https://raw.githubusercontent.com/abcconfirm/yuuuur/refs/heads/main/voidhub.lua"
 
--- URL DO SCRIPT COMPLETO (substitua pela URL onde você salvar este código)
-local meuScript = "https://raw.githubusercontent.com/SEU_USUARIO/SEU_REPO/main/NOME_DO_ARQUIVO.lua"
+print("🎯 Iniciando Auto-Execução do VoidHub...")
 
--- PREPARA O SCRIPT COMPLETO PARA PRÓXIMO TELEPORTE
-if syn and syn.queue_on_teleport then
-    syn.queue_on_teleport('loadstring(game:HttpGet("' .. meuScript .. '))()')
-elseif queue_on_teleport then
-    queue_on_teleport('loadstring(game:HttpGet("' .. meuScript .. '))()')
+-- Função para executar o VoidHub
+local function executarVoidHub()
+    local sucesso, erro = pcall(function()
+        loadstring(game:HttpGet(VoidHubURL, true))()
+    end)
+    
+    if sucesso then
+        print("✅ VoidHub executado com sucesso!")
+    else
+        print("❌ Erro ao executar VoidHub: " .. tostring(erro))
+    end
 end
 
--- ==========================================
--- EXEMPLO COM SUA URL DO GITHUB:
--- ==========================================
+-- Executar VoidHub agora
+executarVoidHub()
 
---[[
-Se você salvar este código em um arquivo chamado "loop.lua", ficaria assim:
-
--- EXECUTA VOIDHUB AGORA
-loadstring(game:HttpGet("https://raw.githubusercontent.com/abcconfirm/yuuuur/refs/heads/main/voidhub.lua"))()
-
--- URL DO SCRIPT COMPLETO
-local meuScript = "https://raw.githubusercontent.com/B8KLOCAL/Apenas/refs/heads/main/loop.lua"
-
--- PREPARA O SCRIPT COMPLETO PARA PRÓXIMO TELEPORTE
+-- Preparar para executar após teleporte
 if syn and syn.queue_on_teleport then
-    syn.queue_on_teleport('loadstring(game:HttpGet("' .. meuScript .. '))()')
+    syn.queue_on_teleport('loadstring(game:HttpGet("' .. VoidHubURL .. '", true))()')
+    print("✅ Configurado para executar após teleporte (syn)")
 elseif queue_on_teleport then
-    queue_on_teleport('loadstring(game:HttpGet("' .. meuScript .. '))()')
+    queue_on_teleport('loadstring(game:HttpGet("' .. VoidHubURL .. '", true))()')
+    print("✅ Configurado para executar após teleporte (queue_on_teleport)")
+else
+    print("⚠️  Não foi possível configurar auto-reexecução")
+    print("⚠️  Seu exploit pode não suportar queue_on_teleport")
 end
---]]
+
+print("✨ Script concluído! O VoidHub será executado automaticamente após teleportes.")
