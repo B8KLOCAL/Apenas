@@ -1,4 +1,4 @@
-local script1URL = "https://raw.githubusercontent.com/seuusuario/repositorio/refs/heads/main/script1.lua"
+local script1URL = "https://raw.githubusercontent.com/B8KLOCAL/Apenas/refs/heads/main/TEST2.lua"
 local script2URL = "https://raw.githubusercontent.com/B8KLOCAL/Apenas/refs/heads/main/Test.lua"
 
 print("🚀 Executando Script 1...")
@@ -18,4 +18,5 @@ else
 end
 
 print("🔄 Ciclo iniciado: 1 → 2 → 1 → 2 → ...")
+
 
