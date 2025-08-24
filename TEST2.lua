@@ -5,8 +5,10 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/abcconfirm/yuuuur/ref
 local scriptCompleto = [[
 -- EXECUTA VOIDHUB AGORA
 loadstring(game:HttpGet("https://raw.githubusercontent.com/abcconfirm/yuuuur/refs/heads/main/voidhub.lua"))()
+
 -- URL DO SCRIPT COMPLETO (substitua pela URL onde você salvar este código)
 local meuScript = "https://raw.githubusercontent.com/SEU_USUARIO/SEU_REPO/main/NOME_DO_ARQUIVO.lua"
+
 -- PREPARA O SCRIPT COMPLETO PARA PRÓXIMO TELEPORTE
 if syn and syn.queue_on_teleport then
     syn.queue_on_teleport('loadstring(game:HttpGet("' .. meuScript .. '))()')
@@ -44,3 +46,4 @@ end
 
 Use a versão simples - é mais confiável!
 --]]
+
